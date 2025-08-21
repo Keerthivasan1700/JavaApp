@@ -1,3 +1,4 @@
+
 name: Java CI/CD Pipeline
 
 # Trigger the pipeline on push to any branch or pull request to main
@@ -22,7 +23,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
-        distribution: 'adoptopenjdk'
+        distribution: 'temurin'  # ✅ Corrected distribution
 
     - name: Build with Maven
       run: mvn clean install
@@ -44,7 +45,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
-        distribution: 'adoptopenjdk'
+        distribution: 'temurin'  # ✅ Corrected distribution
 
     - name: Build with Maven
       run: mvn clean install
@@ -52,4 +53,4 @@ jobs:
     - name: Deploy to your Server/Cloud
       run: |
         echo "Deploying the Java app..."
-        # Add your custom deployment commands here (e.g., scp, ssh, AWS CLI commands)
+       
